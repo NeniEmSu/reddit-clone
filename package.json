@@ -1,0 +1,25 @@
+{
+  "name": "reddit-clone",
+  "version": "1.0.0",
+  "description": "reddit clone with node, ts, gql, react and sql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeniEmSu/reddit-clone.git"
+  },
+  "keywords": [
+    "react",
+    "reddit-clone",
+    "graphql",
+    "sql"
+  ],
+  "author": "Neni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NeniEmSu/reddit-clone/issues"
+  },
+  "homepage": "https://github.com/NeniEmSu/reddit-clone#readme"
+}
