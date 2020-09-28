@@ -6,7 +6,7 @@ import { Field, ObjectType } from "type-graphql";
 @ObjectType()
 export class User {
   @Field()
-  @PrimaryKey({ type: 'uuid', defaultRaw: 'uuid_generate_v4()' })
+  @PrimaryKey({ type: 'uuid' })
   uuid: string = uuidv4();
 
   @Field(() => String)
