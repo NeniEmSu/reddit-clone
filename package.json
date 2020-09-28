@@ -9,7 +9,7 @@
     "start-ts": "ts-node src/index.ts",
     "dev-ts": "nodemon --exec src/index.ts",
     "watch": "tsc -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "create:migration": "mikro-orm migration:create"
   },
   "repository": {
     "type": "git",
