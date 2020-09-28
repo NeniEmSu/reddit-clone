@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
 import { Field, ObjectType } from "type-graphql";
 
@@ -5,8 +6,8 @@ import { Field, ObjectType } from "type-graphql";
 @ObjectType()
 export class User {
   @Field()
-  @PrimaryKey()
-  id!: number;
+  @PrimaryKey({ type: 'uuid', defaultRaw: 'uuid_generate_v4()' })
+  uuid: string = uuidv4();
 
   @Field(() => String)
   @Property({ type: 'date', onCreate: () => new Date() })
