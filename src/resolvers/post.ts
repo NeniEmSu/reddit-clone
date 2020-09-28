@@ -22,4 +22,28 @@ export class PostResolver {
     await em.persistAndFlush(post);
     return post;
   }
+
+  @Mutation(() => Post, { nullable: true })
+  async updatePost(
+    @Arg("id") id: number,
+    @Arg("title") title: string,
+    @Ctx() { em }: MyContext
+  ): Promise<Post | string> {
+    const post = await em.findOne(Post, { id });
+    if (!post) throw new Error(`Unfortunately the post with the id of ${id} doesn't exist.`);
+    if (typeof title !== "undefined") {
+      post.title = title;
+      await em.persistAndFlush(post);
+    }
+    return post;
+  }
+
+  @Mutation(() => Boolean, { nullable: true })
+  async deletePost(
+    @Arg("id") id: number,
+    @Ctx() { em }: MyContext
+  ): Promise<boolean | number> {
+    await em.nativeDelete(Post, { id });  
+    return true;
+  }
 }
